@@ -2,7 +2,7 @@
 
 A phone number spam detection and contact management system built with Django. Think Truecaller, but your own version! Protect users from spam calls while managing contacts efficiently.
 
-## 🚀 Features
+## Features
 
 - 📱 Phone number spam detection
 - 👥 Contact management
@@ -11,7 +11,7 @@ A phone number spam detection and contact management system built with Django. T
 - ⚡ Performance optimized
 - 💾 Caching support
 
-## 🛠️ Prerequisites
+## Prerequisites
 
 Before we dive in, make sure you have:
 
@@ -22,113 +22,113 @@ Before we dive in, make sure you have:
 - A terminal/command prompt
 - Coffee ☕ (optional, but highly recommended 😉)
 
-## 🏃‍♂️ Quick Start
+## Quick Start
 
 I'll walk you through setting this up on different operating systems. Don't worry, it's easier than it looks!
 
-### 🪟 Windows Setup
+### Windows Setup
 
-# Open Command Prompt or PowerShell (I'd suggest PowerShell)
+Open Command Prompt or PowerShell (I'd suggest PowerShell)
 
-# 1. Clone the repo (if you're using Git)
+1. Clone the repo (if you're using Git)
 
-      git clone https://github.com/badalk121/Spam-Sentry
-      cd Spam-Sentry
+            git clone https://github.com/badalk121/Spam-Sentry
+            cd Spam-Sentry
 
-# 2. Create a virtual environment (keeping things clean!)
+2. Create a virtual environment (keeping things clean!)
 
-      python -m venv venv
+            python -m venv venv
 
-# 3. Activate it (choose one based on your terminal)
+3. Activate it (choose one based on your terminal)
 
-# For Command Prompt:
+   For Command Prompt:
 
-      venv\Scripts\activate
+            venv\Scripts\activate
 
-# For PowerShell:
+   For PowerShell:
 
-      .\venv\Scripts\Activate.ps1
+            .\venv\Scripts\Activate.ps1
 
-# 4. Install requirements
+4. Install requirements
 
-      pip install -r requirements.txt
+            pip install -r requirements.txt
 
-# 5. Set up the database
+5. Set up the database
 
-      python manage.py migrate
+            python manage.py migrate
 
-# 6. Create your superuser (follow the prompts)
+6. Create your superuser (follow the prompts)
 
-      python manage.py createsuperuser
+            python manage.py createsuperuser
 
-# 7. Run the development server
+7. Run the development server
 
-      python manage.py runserver
+            python manage.py runserver
 
-### 🍎 macOS/Linux Setup
+### macOS/Linux Setup
 
-# Open Terminal
+Open Terminal
 
-# 1. Clone the repo
+1. Clone the repo
 
-      git clone https://github.com/badalk121/Spam-Sentry.git
-      cd SpamSentry
+            git clone https://github.com/badalk121/Spam-Sentry.git
+            cd SpamSentry
 
-# 2. Create a virtual environment
+2. Create a virtual environment
 
-      python3 -m venv venv
+            python3 -m venv venv
 
-# 3. Activate it
+3. Activate it
 
-      source venv/bin/activate
+            source venv/bin/activate
 
-# 4. Install requirements
+4. Install requirements
 
-      pip install -r requirements.txt
+            pip install -r requirements.txt
 
-# 5. Set up the database
+5. Set up the database
 
-      python manage.py migrate
+            python manage.py migrate
 
-# 6. Create your superuser
+6. Create your superuser
 
-      python manage.py createsuperuser
+            python manage.py createsuperuser
 
-# 7. Run the server
+7. Run the server
 
-      python manage.py runserver
+            python manage.py runserver
 
-## 🎮 Using the API
+## Using the API
 
 Let's test it out! I recommend using either Postman or cURL.
 
 ### Using cURL
 
-# 1. Register a new user
+1. Register a new user
 
-      curl -X POST [http://localhost:8000/api/users/](http://localhost:8000/api/users/)
-      -H "Content-Type: application/json"
-      -d '{"username":"testuser","phone_number":"+11234567890","password":"testpass123"}'
+            curl -X POST [http://localhost:8000/api/users/](http://localhost:8000/api/users/)
+            -H "Content-Type: application/json"
+            -d '{"username":"testuser","phone_number":"+11234567890","password":"testpass123"}'
 
-# 2. Get your token
+3. Get your token
 
-      curl -X POST [http://localhost:8000/api/token/](http://localhost:8000/api/token/)
-      -H "Content-Type: application/json"
-      -d '{"phone_number":"+11234567890","password":"testpass123"}'
+            curl -X POST [http://localhost:8000/api/token/](http://localhost:8000/api/token/)
+            -H "Content-Type: application/json"
+            -d '{"phone_number":"+11234567890","password":"testpass123"}'
 
-# 3. Add a contact (don't forget to replace YOUR_TOKEN)
+4. Add a contact (don't forget to replace YOUR_TOKEN)
 
-      curl -X POST [http://localhost:8000/api/contacts/](http://localhost:8000/api/contacts/)
-      -H "Authorization: Bearer YOUR_TOKEN"
-      -H "Content-Type: application/json"
-      -d '{"name":"John Doe","phone_number":"+10987654321"}'
+            curl -X POST [http://localhost:8000/api/contacts/](http://localhost:8000/api/contacts/)
+            -H "Authorization: Bearer YOUR_TOKEN"
+            -H "Content-Type: application/json"
+            -d '{"name":"John Doe","phone_number":"+10987654321"}'
 
-# 4. Report spam
+5. Report spam
 
-      curl -X POST [http://localhost:8000/api/spam/](http://localhost:8000/api/spam/)
-      -H "Authorization: Bearer YOUR_TOKEN"
-      -H "Content-Type: application/json"
-      -d '{"phone_number":"+10987654321"}'
+            curl -X POST [http://localhost:8000/api/spam/](http://localhost:8000/api/spam/)
+            -H "Authorization: Bearer YOUR_TOKEN"
+            -H "Content-Type: application/json"
+            -d '{"phone_number":"+10987654321"}'
 
 ### Using Postman
 
@@ -138,7 +138,7 @@ Let's test it out! I recommend using either Postman or cURL.
    - `token`: (you'll get this after login)
 3. Try out the endpoints!
 
-## 📱 API Endpoints
+## API Endpoints
 
 Here are all the endpoints you can play with:
 
@@ -159,55 +159,55 @@ POST /api/spam/ - Report spam
 GET /api/spam/check/ - Check number
 GET /api/spam/stats/ - Get spam statistics
 
-## 🐛 Common Issues & Solutions
+## Common Issues & their Solutions
 
 ### "Port already in use" error
 
-# Windows:
+Windows:
 
       netstat -ano | findstr :8000
       taskkill /PID /F
 
-# macOS/Linux:
+macOS/Linux:
 
       lsof -i :8000
       kill -9
 
 ### Database issues?
 
-# Nuclear option (starts fresh):
+Nuclear option (FatBoy):
 
       rm db.sqlite3
       python manage.py migrate
 
 ### Virtual environment not working?
 
-# Windows PowerShell:
+Windows PowerShell:
 
       Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 
-# macOS/Linux:
+macOS/Linux:
 
       chmod +x venv/bin/activate
 
 ## 🧪 Running Tests
 
-# Run all tests
+Run all tests
 
       python manage.py test
 
-# Run specific tests
+Run specific tests
 
       python manage.py test apps.users
       python manage.py test apps.contacts
       python manage.py test apps.spam
 
-# Run with coverage
+Run with coverage
 
       coverage run --source='.' manage.py test
       coverage report
 
-## 📦 Production Deployment
+## Production Deployment
 
 Want to deploy to production? Here's what you need to change:
 
@@ -220,7 +220,7 @@ Want to deploy to production? Here's what you need to change:
    - Nginx + Gunicorn is recommended
    - Don't forget SSL certificates!
 
-## 🤝 Contributing
+## Contributing
 
 Found a bug? Want to add a feature? Awesome! Just:
 
@@ -230,11 +230,11 @@ Found a bug? Want to add a feature? Awesome! Just:
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📝 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](https://github.com/badalk121/Spam-Sentry/blob/main/LICENSE) file for details.
 
-## 🙋‍♂️ Need Help?
+## Need Help?
 
 Got questions? Here's how to get help:
 
